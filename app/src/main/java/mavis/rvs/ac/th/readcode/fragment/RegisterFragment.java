@@ -7,27 +7,65 @@ import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 
 import mavis.rvs.ac.th.readcode.MainActivity;
 import mavis.rvs.ac.th.readcode.R;
+import mavis.rvs.ac.th.readcode.utility.myAlert;
 
 /**
  * Created by Mavis on 21/03/2018.
  */
 
 public class RegisterFragment extends Fragment {
+//    Explicit
+    private String nameString, userString, passwordString;
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
 //        Create ToolBar
+        createToolBar();
+//        Register Controler
+        registerControler();
+    }//Main Method
+
+    private void registerControler() {
+        Button button = getView().findViewById(R.id.btnRegister);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Get Value From EditText
+                EditText nameEditText = getView().findViewById(R.id.edtName);
+                EditText userEditText = getView().findViewById(R.id.edtUser);
+                EditText passwordEditText = getView().findViewById(R.id.edtPassword);
+
+//                Change EditText to String
+                nameString = nameEditText.getText().toString().trim();
+                userString = userEditText.getText().toString().trim();
+                passwordString = passwordEditText.getText().toString().trim();
+
+//                Check Space
+                if (nameString.isEmpty()|| userString.isEmpty() || passwordString.isEmpty()) {
+//                    Have Space
+                    myAlert objMyAlert = new myAlert(getActivity());
+                    objMyAlert.myDialog("Have Space","Please Fill All Blank");
+                } else {
+//                    No Space
+                }
+            }
+        });
+    }
+
+    private void createToolBar() {
         Toolbar toolbar = getView().findViewById(R.id.toolbarRegister);
         ((MainActivity)getActivity()).setSupportActionBar(toolbar);
 
 //        Setup Title
         ((MainActivity) getActivity()).getSupportActionBar().setTitle("Register");
-//        Show Icon
+//        Show Navigator Icon
         ((MainActivity) getActivity()).getSupportActionBar().setHomeButtonEnabled(true);
         ((MainActivity) getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -36,7 +74,7 @@ public class RegisterFragment extends Fragment {
                 getActivity().getSupportFragmentManager().popBackStack();
             }
         });
-    }//Main Method
+    }
 
     @Nullable
     @Override
