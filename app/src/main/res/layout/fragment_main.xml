@@ -64,6 +64,7 @@
 
         <!--register-->
         <TextView
+            android:id="@+id/txtRegister"
             android:textColor="@color/colorAccent"
             android:layout_margin="10dp"
             android:textStyle="bold"
