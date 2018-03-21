@@ -10,15 +10,16 @@ import android.view.ViewGroup;
 import mavis.rvs.ac.th.readcode.R;
 
 /**
- * Created by Mavis on 20/03/2018.
+ * Created by Mavis on 21/03/2018.
  */
 
-public class MainFragment extends Fragment{
+public class RegisterFragment extends Fragment {
+
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_main, container, false);
+        View view = inflater.inflate(R.layout.fragment_register, container, false);
         return view;
     }
-}  //Main Class
+}//Main Class

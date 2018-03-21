@@ -4,6 +4,7 @@
 
     <!--Content-->
     <LinearLayout
+        android:background="#a0ffffff"
         android:layout_margin="50dp"
         android:orientation="vertical"
         android:layout_width="match_parent"
