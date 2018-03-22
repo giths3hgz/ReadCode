@@ -34,8 +34,22 @@ public class MainFragment extends Fragment{
         registerControler();
 
 //        Loing Controller
-        loingController();
+       loingController();
+        
+      //  test();
+        
     }// Main Method
+
+    private void test() {
+        final String[] loginStrings = new String[]{"11", "Yuttasak", "sixers", "123456"};
+        Button button = getView().findViewById(R.id.btnLogin);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getActivity(),"Welcome" + loginStrings[1],Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
 
     private void loingController() {
         Button button = getView().findViewById(R.id.btnLogin);
@@ -77,8 +91,8 @@ public class MainFragment extends Fragment{
                             JSONObject jsonObject = jsonArray.getJSONObject(i); // ตัวชี้เป้า
                             if (userString.equals(jsonObject.getString(columnUserStrings[2]))) {
                                 statusBoolean = false;
-                                for (int i1=0; i< columnUserStrings.length; i1+=1) {
-                                    loginStrings[i1] = jsonObject.getString(columnUserStrings[i]);
+                                for (int i1=0; i1< columnUserStrings.length; i1+=1) {
+                                    loginStrings[i1] = jsonObject.getString(columnUserStrings[i1]);
                                     Log.d("22MarchV1", "loginStrings[" + i1 + "]==>" + loginStrings[i1]);
                                 }
                             }
