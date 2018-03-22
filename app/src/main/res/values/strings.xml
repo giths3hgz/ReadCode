@@ -2,4 +2,6 @@
     <string name="app_name">Read Code</string>
     <string name="th_login">ลงชื่อเข้าใช้</string>
     <string name="th_regis">ลงทะเบียนใหม่</string>
+    <string name="th_alertspace">ใส่ข้อมูลไม่ครบ</string>
+    <string name="th_alertkeyall">กรุณากรอกข้อมูลให้ครบถ้วน</string>
 </resources>
